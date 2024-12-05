@@ -34,3 +34,13 @@ func IsSameArray(arr1 []string, arr2 []string) bool {
 
 	return true
 }
+
+func Contains(arr []string, el string) bool {
+	for _, v := range arr {
+		if v == el {
+			return true
+		}
+	}
+
+	return false
+}
