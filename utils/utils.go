@@ -3,6 +3,7 @@ package utils
 import (
 	"fmt"
 	"os"
+	"strings"
 )
 
 func ReadFile(path string) string {
@@ -43,4 +44,14 @@ func Contains(arr []string, el string) bool {
 	}
 
 	return false
+}
+
+func Get2DArrayFromString(s string, sep string) [][]string {
+	var ret [][]string
+	rows := strings.Split(s, "\r\n")
+	for _, r := range rows {
+		ret = append(ret, strings.Split(r, sep))
+	}
+
+	return ret
 }
